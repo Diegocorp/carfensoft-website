@@ -53,11 +53,11 @@ const Footer = () => {
       </LeftText>
       <RightText>
         Developed by <a href="https://diegocorp.github.io/">Diego Sandoval</a>
-        <a href="https://twitter.com/code_bucks">
+        <a href="https://github.com/Diegocorp">
           <img src={Github} alt="Github" />
         </a>
         &nbsp;
-        <a href="https://www.instagram.com/code.bucks/">
+        <a href="https://www.linkedin.com/in/diego-sandoval-83856a212/">
           <img src={Linkedin} alt="Linkedin" />
         </a>
       </RightText>
