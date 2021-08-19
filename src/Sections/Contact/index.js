@@ -3,6 +3,7 @@ import LinkedId from "../../assets/linkedin-brands.svg";
 import Twitter from "../../assets/twitter-square-brands.svg";
 import Instagram from "../../assets/instagram-square-brands.svg";
 import styled from "styled-components";
+import { useForm, ValidationError } from "@formspree/react";
 
 const ContactSection = styled.section`
   width: 100vw;
@@ -13,6 +14,9 @@ const ContactSection = styled.section`
   /* justify-content: center; */
   align-items: center;
   justify-content: center;
+  h2 {
+    color: white;
+  }
 `;
 
 const Title = styled.h1`
@@ -113,30 +117,41 @@ const Row = styled.div`
   }
 `;
 const Contact = () => {
+  const [state, handleSubmit] = useForm("mvodvwby");
+  if (state.succeeded) {
+    return (
+      <ContactSection>
+        {" "}
+        <h2>Thanks for contact us!</h2>
+      </ContactSection>
+    );
+  }
   return (
     <ContactSection id="contact">
       <Title>Get in touch</Title>
       <Text>
         If you have any idea or wish to contact us, please fill out this form.
       </Text>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Row>
-          <input name="name" type="text" placeholder="Name..." />
-          <input name="email" type="email" placeholder="Email..." />
+          <input id="name" name="name" type="text" placeholder="Name..." />
+          <input id="email" name="email" type="email" placeholder="Email..." />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
         </Row>
         <textarea
-          name=""
-          id=""
+          name="message"
+          id="message"
           cols="30"
           rows="2"
           placeholder="Message..."
         ></textarea>
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
         <div style={{ margin: "0 auto" }}>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-            }}
-          >
+          <button type="submit" disabled={state.submitting}>
             Submit
           </button>
         </div>
