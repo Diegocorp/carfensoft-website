@@ -4,7 +4,7 @@ import Linkedin from "../../assets/linkedin-brands.svg";
 
 const FOOTER = styled.footer`
   padding: 1.2rem calc(2.5rem + 2.5vw);
-  font-size: 1.2rem;
+  font-size: 1rem;
   background-color: #eff7f9;
   display: flex;
   align-items: center;
