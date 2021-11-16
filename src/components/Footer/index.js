@@ -52,7 +52,10 @@ const Footer = () => {
         Privacy Policy | © 2021 CarfenSoft. All Rights Reserved.
       </LeftText>
       <RightText>
-        Developed by <a href="https://diegocorp.github.io/">Diego Sandoval</a>
+        Developed by
+        <a target="_blank" href="https://www.diegosandoval.tech/">
+          Diego Sandoval
+        </a>
         <a href="https://github.com/Diegocorp">
           <img src={Github} alt="Github" />
         </a>
