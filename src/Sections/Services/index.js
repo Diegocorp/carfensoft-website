@@ -192,7 +192,7 @@ const Services = () => {
               scrub: true,
               snap: true,
 
-              // toggleActions: "play none none reverse",
+              // toggleActions: "play none none reverse", or not
             },
           })
           .from(
